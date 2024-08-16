@@ -1,1 +1,4 @@
-# portfolio
+# Designer
+
+###Education
+Bachelor
