@@ -1,1 +1,5 @@
-
+title: Andrei Kaliuzhny  
+logo: /assets/img/untitled.png
+#description: text below image
+show_downloads: true
+theme: jekyll-theme-minimal
