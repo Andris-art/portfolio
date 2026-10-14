@@ -269,3 +269,80 @@ body{background:var(--bg);color:var(--ink)}
 .editorial-quote blockquote{font-size:47px}
 }
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1!important;transform:none!important}}
+
+
+/* V5 · Editorial password-entry experience (presentation gate, not server authentication). */
+html.case-locked { overflow:hidden; }
+html.case-locked .case-page > .skip-link,
+html.case-locked .case-page > .site-nav,
+html.case-locked .case-page > main,
+html.case-locked .case-page > .page-footer {
+  filter:blur(13px); transform:translateZ(0); pointer-events:none; user-select:none;
+}
+.case-gate-overlay {
+  position:fixed; inset:0; z-index:3000; display:flex;
+  align-items:center; justify-content:center;
+  padding:clamp(14px,4vw,54px);
+  background:rgba(241,236,236,.38);
+  -webkit-backdrop-filter:blur(13px);backdrop-filter:blur(13px);
+  opacity:1;visibility:visible;
+  transition:opacity .4s ease,visibility .4s ease;
+}
+.case-gate-overlay[hidden] { display:none!important; }
+html.case-unlocked .case-gate-overlay { opacity:0;visibility:hidden;pointer-events:none; }
+.case-gate-panel {
+  width:min(100%,540px); max-height:min(92dvh,820px);overflow-y:auto;
+  background:#F1ECEC;color:#333333;
+  border:1px solid rgba(51,51,51,.24);
+  border-radius:14px;box-shadow:0 28px 100px rgba(51,51,51,.14);
+  padding:clamp(27px,4.8vw,50px);position:relative;
+  -webkit-font-smoothing:antialiased;
+}
+.case-gate-header {display:flex;justify-content:space-between;align-items:center;gap:18px;margin-bottom:clamp(42px,6vw,70px);}
+.case-gate-eyebrow {font-size:10px;letter-spacing:.15em;text-transform:uppercase;font-weight:700;line-height:1.4;}
+.case-gate-mark {width:35px;height:35px;border:1px solid rgba(51,51,51,.55);border-radius:100%;display:grid;place-items:center;flex:none;}
+.case-gate-mark svg {width:16px;height:16px;stroke:#333333;}
+.case-gate-title {margin:0 0 18px;font-size:clamp(51px,6vw,77px);line-height:.95;letter-spacing:-.085em;font-weight:750;}
+.case-gate-title em {display:block;font-family:Georgia,'Times New Roman',serif;font-weight:400;letter-spacing:-.05em;font-style:italic;line-height:1.07;}
+.case-gate-description {margin:0 0 clamp(34px,5vw,53px);font-size:15px;line-height:1.6;letter-spacing:-.015em;max-width:340px;}
+.case-gate-label {display:block;font-size:10px;letter-spacing:.14em;font-weight:700;margin-bottom:12px;}
+.case-gate-input-wrap {width:100%;height:62px;border:1px solid #AFA5A3;display:flex;align-items:stretch;transition:border-color .2s ease;}
+.case-gate-input-wrap:focus-within {border-color:#333333;box-shadow:inset 0 0 0 1px #333333;}
+.case-gate-input-wrap:has(input[aria-invalid='true']) {border-color:#B54C43;}
+.case-gate-input {font-family:inherit;border:0;min-width:0;width:100%;flex:1;padding:0 17px;outline:0;background:transparent;color:#333333;font-size:16px;letter-spacing:-.02em;}
+.case-gate-input::placeholder {color:#968B89;}
+.case-gate-visibility {background:transparent;border:0;min-width:63px;color:#333333;font-size:12px;cursor:pointer;padding:0 16px;}
+.case-gate-visibility:hover {text-decoration:underline;}
+.case-gate-message {min-height:27px;margin:8px 0 12px;font-size:12px;color:#B54C43;line-height:1.35;}
+.case-gate-submit {border:0;background:#333333;color:#F1ECEC;font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:space-between;gap:14px;width:100%;padding:20px;min-height:62px;cursor:pointer;transition:background .2s ease;}
+.case-gate-submit:hover {background:#484848;}
+.case-gate-submit:disabled {opacity:.6;cursor:wait;}
+.case-gate-bottom {margin-top:clamp(31px,5vw,49px);padding-top:19px;border-top:1px solid #D1C9C7;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;font-size:12px;}
+.case-gate-bottom a {text-decoration:underline;text-underline-offset:3px;}
+.case-gate-bottom a:hover {opacity:.65;}
+.case-gate-error .case-gate-input-wrap {animation:gate-nudge .33s ease;}
+@keyframes gate-nudge {0%,100%{transform:translateX(0)}30%{transform:translateX(-5px)}65%{transform:translateX(5px)}}
+@media (max-width:600px){
+  .case-gate-panel{width:100%;padding:29px 26px 30px;border-radius:10px;}
+  .case-gate-header{margin-bottom:40px;}
+  .case-gate-title{font-size:clamp(48px,12.9vw,69px);}
+  .case-gate-description{font-size:14px;margin-bottom:34px;}
+  .case-gate-input-wrap{height:58px;}
+  .case-gate-submit{min-height:58px;}
+}
+@media(max-height:660px){
+  .case-gate-panel{padding-top:20px;padding-bottom:20px;}
+  .case-gate-header{margin-bottom:19px;}
+  .case-gate-title{font-size:clamp(43px,7vw,58px);}
+  .case-gate-description{margin-bottom:22px;}
+  .case-gate-bottom{margin-top:15px;}
+}
+@media(prefers-reduced-motion:reduce){.case-gate-overlay,.case-gate-submit{transition:none!important}.case-gate-error .case-gate-input-wrap{animation:none!important}}
+
+
+/* v6 — No full-bleed divider rules between case-study chapters.
+   Keep the short in-column editorial index rules, image layouts and other UI separators. */
+.case-page .chapter,
+.case-page .editorial-quote,
+.case-page .gallery-chapter,
+.case-page .gallery--editorial { border-top: 0; }
