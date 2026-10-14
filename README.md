@@ -1,4 +1,0 @@
-# Designer
-
-###Education
-Bachelor
