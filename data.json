@@ -1,0 +1,101 @@
+[
+  {
+    "slug": "johnson-johnson",
+    "title": "Johnson & Johnson",
+    "tagline": "Connected surgery, designed as a system.",
+    "disciplines": "Design Leadership \u00b7 DesignOps \u00b7 Systems",
+    "period": "2023 \u2014 Present",
+    "first": 5,
+    "last": 14,
+    "accent": "#f45b44",
+    "description": "A fragmented connected-surgery ecosystem needed shared design standards, clearer delivery ownership, and a scalable foundation."
+  },
+  {
+    "slug": "qatar-airways",
+    "title": "Qatar Airways",
+    "tagline": "Better journeys start before booking.",
+    "disciplines": "Experience Design \u00b7 Research \u00b7 UI",
+    "period": "2021 \u2014 2022",
+    "first": 15,
+    "last": 23,
+    "accent": "#b34c86",
+    "description": "Reimagining discovery and booking touchpoints around how people plan their travel."
+  },
+  {
+    "slug": "epam-documents",
+    "title": "EPAM Documents",
+    "tagline": "International scale begins with local differences.",
+    "disciplines": "Product Design \u00b7 SaaS \u00b7 Workflow",
+    "period": "2020 \u2014 2021",
+    "first": 24,
+    "last": 31,
+    "accent": "#4b9ffa",
+    "description": "Building flexible document and onboarding journeys for different countries and teams."
+  },
+  {
+    "slug": "credit-suisse",
+    "title": "Credit Suisse",
+    "tagline": "A system that brings teams into alignment.",
+    "disciplines": "Design Systems \u00b7 DesignOps",
+    "period": "2023",
+    "first": 32,
+    "last": 38,
+    "accent": "#cfb792",
+    "description": "Making financial-service experiences and cross-team component practices more consistent."
+  },
+  {
+    "slug": "onefootball",
+    "title": "OneFootball",
+    "tagline": "A new expression for the beautiful game.",
+    "disciplines": "Visual Design \u00b7 Design Systems",
+    "period": "2022",
+    "first": 39,
+    "last": 44,
+    "accent": "#cbef20",
+    "description": "Evolving a high-energy digital sports language across core content experiences."
+  },
+  {
+    "slug": "look-like",
+    "title": "Look Like",
+    "tagline": "An identity with a distinct character.",
+    "disciplines": "Art Direction \u00b7 Branding",
+    "period": "",
+    "first": 45,
+    "last": 47,
+    "accent": "#e99bba",
+    "description": "Art direction and visual exploration for an expressive identity."
+  },
+  {
+    "slug": "we-are-community",
+    "title": "We Are Community",
+    "tagline": "Building a place for engineers to connect.",
+    "disciplines": "Experience Design \u00b7 Research",
+    "period": "",
+    "first": 48,
+    "last": 53,
+    "accent": "#a37be9",
+    "description": "Defining paths through a platform for communities and event organizers."
+  },
+  {
+    "slug": "archipelag",
+    "title": "Archipelag",
+    "tagline": "Architecture and digital experience.",
+    "disciplines": "Product Design \u00b7 Research",
+    "period": "",
+    "first": 54,
+    "last": 57,
+    "accent": "#b7cdaf",
+    "description": "Design work connecting a long-established architecture studio with digital audiences."
+  },
+  {
+    "slug": "broker",
+    "title": "Broker",
+    "tagline": "A clearer way to navigate trading.",
+    "disciplines": "Product Design \u00b7 UX",
+    "period": "",
+    "first": 58,
+    "last": 61,
+    "accent": "#8bbab7",
+    "description": "Research and information architecture for a brokerage experience."
+  }
+]
