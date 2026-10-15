@@ -1,3 +1,23 @@
+// Shared favicon for the homepage and all /projects pages.
+// Resolve assets from this script URL, so GitHub Pages project subpaths also work.
+(() => {
+  const current = document.currentScript;
+  if (!current || !current.src) return;
+  const siteRoot = new URL('.', current.src);
+  const icons = [
+    { rel: 'icon', type: 'image/x-icon', name: 'favicon.ico?v=13' },
+    { rel: 'apple-touch-icon', type: 'image/png', name: 'apple-touch-icon.png?v=13' }
+  ];
+  for (const entry of icons) {
+    if (document.head.querySelector(`link[rel="${entry.rel}"]`)) continue;
+    const link = document.createElement('link');
+    link.rel = entry.rel;
+    link.type = entry.type;
+    link.href = new URL(entry.name, siteRoot).href;
+    document.head.appendChild(link);
+  }
+})();
+
 if('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}}),{threshold:.04});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));}else{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));}
 
 // Portfolio engagement: fire milestones once per page view, only after real scrolling.
