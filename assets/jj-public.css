@@ -1,0 +1,9 @@
+/* Public-safe J&J case illustration presentation / v17 */
+.jj-concept-caption{background:var(--bg);padding:13px 2px 0;font-size:11px;color:var(--muted);letter-spacing:.055em;text-align:right}
+.case-page .jj-public-note{border-top:1px solid var(--line);padding-top:18px;margin-top:35px;font-size:12px;line-height:1.55;color:var(--muted);letter-spacing:0}
+.jj-qualitative-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2.5vw,42px);}
+.jj-qualitative-card{min-width:0;border-top:1px solid #817B77;padding:28px 2px 45px;display:flex;flex-direction:column;min-height:260px}
+.jj-qualitative-number{font-size:11px;letter-spacing:.16em;color:#BDB6B1;font-weight:750}
+.jj-qualitative-card h3{font-weight:730;font-size:clamp(28px,2.35vw,45px);line-height:1.15;letter-spacing:-.06em;margin:26px 0 18px;color:#F1ECEC}
+.jj-qualitative-card p{margin:0;max-width:400px;font-size:clamp(14px,1.17vw,19px);line-height:1.65;color:#D6CECA;letter-spacing:-.022em}
+@media(max-width:850px){.jj-qualitative-grid{grid-template-columns:1fr;gap:0}.jj-qualitative-card{min-height:auto;padding-bottom:35px}.jj-qualitative-card h3{font-size:34px}.jj-concept-caption{text-align:left}}
