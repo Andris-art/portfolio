@@ -47,3 +47,23 @@ if('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-moti
   };
   window.addEventListener('scroll', handleScroll, { passive: true });
 })();
+
+
+// V20 — reading progress in the persistent header, on all pages.
+(() => {
+  const bar = document.querySelector('.scroll-progress-bar');
+  if (!bar) return;
+  let pending = false;
+  const update = () => {
+    pending = false;
+    const root = document.documentElement;
+    const range = Math.max(0, root.scrollHeight - window.innerHeight);
+    const progress = range ? Math.min(1, Math.max(0, window.scrollY / range)) : 1;
+    bar.style.transform = `scaleX(${progress})`;
+  };
+  const requestUpdate = () => {if (!pending) {pending=true;requestAnimationFrame(update);}};
+  window.addEventListener('scroll',requestUpdate,{passive:true});
+  window.addEventListener('resize',requestUpdate,{passive:true});
+  window.addEventListener('load',requestUpdate,{once:true});
+  requestUpdate();
+})();
