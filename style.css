@@ -471,24 +471,26 @@ html{scroll-padding-top:90px}
 .home-page .work-grid .project-card{min-width:0;margin:0;padding:0;border:0;display:flex;flex-direction:column;gap:0}
 .home-page .work-grid .project-meta{border-top:0;padding:0 0 17px;align-items:flex-start;font-size:clamp(10px,.75vw,12px);line-height:1.5}
 .home-page .work-grid .project-meta span:last-child{text-align:right;color:var(--muted)}
-.home-page .work-grid .project-picture{--media-inset:clamp(12px,1.6vw,29px);position:relative;display:block;aspect-ratio:1.28;border-radius:clamp(14px,1.65vw,26px);overflow:hidden;background:var(--accent)}
+.home-page .work-grid .project-picture{position:relative;display:block;aspect-ratio:1.28;border-radius:clamp(14px,1.65vw,26px);overflow:hidden;background:var(--accent)}
 .home-page .work-grid .project-picture::after{content:none}
 .home-page .work-grid .project-picture>img,.home-page .work-grid .project-picture>video{
-  position:absolute!important;inset:var(--media-inset)!important;
-  width:calc(100% - 2 * var(--media-inset))!important;
-  height:calc(100% - 2 * var(--media-inset))!important;
-  display:block;object-fit:cover;border-radius:clamp(8px,1.25vw,19px);
-  transform:scale(1);transition:transform 1.35s cubic-bezier(.22,1,.36,1),filter 1.2s ease!important;
+  position:absolute!important;inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  display:block;object-fit:cover;border-radius:0;
+  transform:scale(1);
+  transition:transform 1.2s cubic-bezier(.22,1,.36,1),filter 1.2s ease!important;
+
 }
 .home-page .work-grid .project-info{display:flex;flex-wrap:wrap;align-items:start;gap:8px 20px;padding:19px 0 0}
 .home-page .work-grid .project-title{font-size:clamp(26px,3vw,52px);line-height:1.05;letter-spacing:-.07em}
 .home-page .work-grid .project-tagline{font-size:clamp(13px,1vw,17px);line-height:1.48;flex-basis:100%;max-width:none;color:var(--muted)}
 .home-page .work-grid .project-title .ui-arrow{width:.59em;height:.59em}
 @media (hover:hover) and (pointer:fine){
- .home-page .work-grid .project-card:hover .project-picture>img,.home-page .work-grid .project-card:hover .project-picture>video{transform:scale(1.028)}
+ .home-page .work-grid .project-card:hover .project-picture>img,.home-page .work-grid .project-card:hover .project-picture>video{transform:scale(1.065)}
  .home-page .work-grid .project-card:hover .project-title .ui-arrow{transform:translateX(.13em)}
 }
-.home-page .work-grid .project-card:focus-visible .project-picture>img,.home-page .work-grid .project-card:focus-visible .project-picture>video{transform:scale(1.02)}
+.home-page .work-grid .project-card:focus-visible .project-picture>img,.home-page .work-grid .project-card:focus-visible .project-picture>video{transform:scale(1.045)}
 .home-page .lab-picture{background:#D3C4F4!important}
 .lab-art{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;overflow:hidden;color:#333333}
 .lab-circle{position:absolute;display:block;width:48%;aspect-ratio:1;border-radius:50%;filter:blur(1px);box-shadow:inset 0 0 55px #ffffff70}
@@ -526,7 +528,7 @@ html{scroll-padding-top:90px}
  .site-nav .nav-right{font-size:13px}
  .site-nav .nav-right .ui-arrow{display:none}
  .home-page .work-grid{grid-template-columns:1fr;padding:0 5vw 120px;gap:46px}
- .home-page .work-grid .project-picture{aspect-ratio:1.3;--media-inset:clamp(12px,4vw,25px)}
+ .home-page .work-grid .project-picture{aspect-ratio:1.3}
  .home-page .work-grid .project-meta{font-size:11px}
  .home-page .work-grid .project-title{font-size:clamp(34px,9vw,53px)}
  .home-page .work-grid .project-tagline{font-size:15px}
@@ -618,3 +620,14 @@ html{scroll-padding-top:90px}
 .case-page--qatar .chapter--qa-booking .chapter-mosaic figure:first-child{aspect-ratio:1.34}
 .case-page--qatar .chapter--qa-booking .chapter-mosaic figure:nth-child(2){aspect-ratio:.95}
 @media(max-width:760px){.case-page--qatar .chapter--qa-booking .chapter-mosaic{grid-template-columns:1fr;gap:12px}.case-page--qatar .chapter--qa-booking .chapter-mosaic figure:first-child,.case-page--qatar .chapter--qa-booking .chapter-mosaic figure:nth-child(2){aspect-ratio:auto}.case-page--qatar .chapter--qa-booking .chapter-mosaic img{height:auto;object-fit:contain}}
+
+/* v22 — Full-bleed work covers, controlled lime accents */
+:root{--accent-lime:#C8F33F}
+.scroll-progress{height:3px}
+.scroll-progress-bar{background:var(--accent-lime)}
+.home-page .hero-top .pill{gap:10px}
+.home-page .hero-top .pill::before{content:"";width:8px;height:8px;border-radius:50%;flex:0 0 8px;background:var(--accent-lime)}
+.home-page .featured-intro .section-side::before{content:"";display:block;width:10px;height:10px;border-radius:50%;background:var(--accent-lime);margin:0 0 19px}
+/* Ensure the fill stage, not individual project media, owns the only rounded edge. */
+.home-page .work-grid .project-picture>img,
+.home-page .work-grid .project-picture>video{border-radius:0!important}
